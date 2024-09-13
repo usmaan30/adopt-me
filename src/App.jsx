@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import SearchParams from "./SearchParams";
-import { Link, HashRouter, Routes, Route } from "react-router-dom"; // Use HashRouter
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Details from "./Details";
 import AdoptedPetContext from "./AdoptedPetContext";
@@ -18,9 +18,7 @@ const queryClient = new QueryClient({
 const App = () => {
   const adoptedPet = useState(null);
   return (
-    <HashRouter>
-      {" "}
-      {/* Switched to HashRouter */}
+    <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <AdoptedPetContext.Provider value={adoptedPet}>
           <header>
@@ -33,7 +31,7 @@ const App = () => {
           </Routes>
         </AdoptedPetContext.Provider>
       </QueryClientProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
