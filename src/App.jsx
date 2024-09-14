@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createRoot } from "react-dom/client";
+// import { createRoot } from "react-dom/client";
 import SearchParams from "./SearchParams";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -35,6 +35,4 @@ const App = () => {
   );
 };
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+export default App;
